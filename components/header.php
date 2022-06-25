@@ -41,7 +41,7 @@ session_start();
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <!-- Home link -->
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page"  href="<?php echo home_base_url()?>">Home</a>
                     </li>
                     <!-- END Home Link -->
                     <!-- if admin  -->

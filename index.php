@@ -24,20 +24,13 @@ require"./components/header.php";
         </form>
         <!-- Saerch END -->
         <!-- Books -->
-        <div class="container row g-3 mt-5 mb-4">
-            <!-- book -->
-            <div class="card col-sm-6 col-md-3 m-2" >
-                <img src="https://www.noor-book.com/publice/covers_cache_webp/13/a/7/2/dc13b922dba725451acca7f60e4273cf.png.webp" class="card-img-top" alt="..." >
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <a href="#" class="btn btn-primary">Show</a>
-                </div>
-            </div>
-        <!-- End Book -->
+        <div class="container row g-3 mt-5 mb-4 books">
+            
     <?php }
     ?>
         
     </div>
     <!-- Books  END-->
+    <script src="./src/data.js"></script>
 </body>
 </html>
