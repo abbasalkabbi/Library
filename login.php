@@ -1,35 +1,69 @@
 <?php 
-session_start();
-if(isset($_SESSION['username'])){
-    header("location: index.php");
-}
+
 $name="Login";
 require"./api/config.php";
 require"./components/header.php";
+if(isset($_SESSION['username'])){
+  header("location: index.php");
+}
 ?>
+<style>
+.btn-color{
+    background-color: #0e1c36;
+    color: #fff;
+}
 
-    <div class="container d-flex justify-content-center align-items-center">
-        <!-- Form login -->
-        <form class="col-8 mt-5">
+.profile-image-pic{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+
+
+.cardbody-color{
+    background-color: #ebf2fa;
+}
+
+a{
+    text-decoration: none;
+}
+</style>
+<!-- container -->
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2 class="text-center text-dark mt-5">تسجبل الدخول</h2>
+        <div class="text-center mb-5 text-dark">مكتبة </div>
+        <div class="card my-5">
+
+          <form class="card-body cardbody-color p-lg-5">
+
+            <div class="text-center">
+              <img src="https://www.ukrgate.com/eng/wp-content/uploads/2021/02/The-Ukrainian-Book-Institute-Purchases-380.9-Thousand-Books-for-Public-Libraries1.jpeg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                width="200px" alt="profile">
+            </div>
             <!-- Errors -->
             <div class="errors">
             </div>
             <!-- Errors END -->
-            <!-- username input -->
-            <div class="form-outline mb-4">
-                <input type="text" id="username" class="form-control" name="username" />
-                <label class="form-label" for="username">username </label>
+            <div class="mb-3">
+              <input type="text" class="form-control"name='username' id="Username" aria-describedby="emailHelp"
+                placeholder="User Name">
             </div>
-            <!-- Password input -->
-            <div class="form-outline mb-4">
-                <input type="password" id="form2Example2" class="form-control" name="password"/>
-                <label class="form-label" for="form2Example2">Password</label>
+            <div class="mb-3">
+              <input type="password" class="form-control" id="password" name='password' placeholder="Password">
             </div>
-            <!-- Submit button -->
-            <button type="button" class="btn btn-primary btn-block mb-4">log in</button>
-    </form>
-    <!-- End From -->
+            <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100">تسجبل الدخول</button></div>
+            <div id="emailHelp" class="form-text text-center mb-5 text-dark">ليس لديك حساب
+                ؟<a href="./logup.php" class="text-dark fw-bold"> نشاء حساب جديد</a>
+            </div>
+          </form>
+        </div>
+
+      </div>
     </div>
+  </div>
 <script src="./src/login.js"></script>
 </body>
 </html>

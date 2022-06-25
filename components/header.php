@@ -46,7 +46,7 @@ session_start();
                     <!-- END Home Link -->
                     <!-- if admin  -->
                     <?php 
-                            if($_SESSION['is_admin'] == true){
+                            if(isset($_SESSION['is_admin']) == true){
                         ?>
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="<?php echo home_base_url()?>admin">Admin </a>

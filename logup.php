@@ -1,8 +1,11 @@
 <?php 
-$name="Add Book";
-require'../api/config.php';
-require"../components/header.php";
 
+$name="Logup";
+require"./api/config.php";
+require"./components/header.php";
+if(isset($_SESSION['username'])){
+  header("location: index.php");
+}
 ?>
 <style>
 .btn-color{
@@ -26,12 +29,11 @@ a{
     text-decoration: none;
 }
 </style>
-
-    <!-- container -->
+<!-- container -->
 <div class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3">
-        <h2 class="text-center text-dark mt-5">تحميل كتاب</h2>
+        <h2 class="text-center text-dark mt-5">تسجبل </h2>
         <div class="text-center mb-5 text-dark">مكتبة </div>
         <div class="card my-5">
 
@@ -45,33 +47,23 @@ a{
             <div class="errors">
             </div>
             <!-- Errors END -->
-            <!-- Title -->
-            <div class="form-group mb-3">
-              <label for="title">Title </label>
-              <input type="text" class="form-control" name="title" />
-            </div>
-            <!-- End Title -->
-            <!-- PDF -->
             <div class="mb-3">
-              <label for="formFile" class="form-label" name="pdf">Book PDF</label>
-              <input class="form-control" type="file" id="formFile" name="pdf">
+              <input type="text" class="form-control"name='username' id="Username" aria-describedby="emailHelp"
+                placeholder="User Name">
             </div>
-            <!-- PDF END -->
-            <!-- thumbnails -->
             <div class="mb-3">
-                <label for="formFile" class="form-label" name="thumbnail">thumbnails</label>
-                <input class="form-control" type="file" id="formFile" name="thumbnail">
+              <input type="password" class="form-control" id="password" name='password' placeholder="Password">
             </div>
-            <!-- thumbnails END -->
-            <!-- submit -->
-            <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100">تحميل</button></div>
-            
+            <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100">تسجبل </button></div>
+            <div id="emailHelp" class="form-text text-center mb-5 text-dark"> لديك حساب
+                ؟<a href="./login.php" class="text-dark fw-bold">  تسجبل الدخول الحسابك</a>
+            </div>
           </form>
         </div>
 
       </div>
     </div>
   </div>
-    <script src="./Addbook.js"></script>
+<script src="./src/login.js"></script>
 </body>
 </html>

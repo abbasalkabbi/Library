@@ -13,7 +13,7 @@ function sign_in() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 let data = xhr.response;
-                    // dataj=JSON.parse(data)
+                dataj=JSON.parse(data)
                 console.log(data);
                 if(dataj.status ==false){
                     errors.innerHTML=
