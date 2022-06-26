@@ -47,6 +47,12 @@ a{
             <div class="errors">
             </div>
             <!-- Errors END -->
+            <!-- Name -->
+            <div class="mb-3">
+              <input type="text" class="form-control"name='name' id="name" aria-describedby="emailHelp"
+                placeholder="Full Name">
+            </div>
+            <!-- Name END  -->
             <div class="mb-3">
               <input type="text" class="form-control"name='username' id="Username" aria-describedby="emailHelp"
                 placeholder="User Name">
@@ -64,6 +70,6 @@ a{
       </div>
     </div>
   </div>
-<script src="./src/login.js"></script>
+<script src="./src/logup.js"></script>
 </body>
 </html>

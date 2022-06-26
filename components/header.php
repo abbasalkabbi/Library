@@ -44,18 +44,6 @@ session_start();
                         <a class="nav-link active" aria-current="page"  href="<?php echo home_base_url()?>">Home</a>
                     </li>
                     <!-- END Home Link -->
-                    <!-- if admin  -->
-                    <?php 
-                            if(isset($_SESSION['is_admin']) == true){
-                        ?>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="<?php echo home_base_url()?>admin">Admin </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="<?php echo home_base_url()?>admin/AddBook.php">Add Book </a>
-                            </li>
-                        <?php } ?>
-                    <!-- if Admin END -->
                     <!-- if not login -->
                     <?php if(!isset($_SESSION['username']))
                     {
@@ -65,12 +53,24 @@ session_start();
                             >Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/logup.php">Log Up</a>
+                            <a class="nav-link active" aria-current="page"href="<?php echo home_base_url()?>logup.php">Log Up</a>
                         </li>
                     <?php }else{?>
                         <!-- if login -->
+                        <!-- if admin  -->
+                        <?php 
+                                if($_SESSION['is_admin'] == true){
+                            ?>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="<?php echo home_base_url()?>admin">Admin </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="<?php echo home_base_url()?>admin/AddBook.php">Add Book </a>
+                                </li>
+                            <?php } ?>
+                        <!-- if Admin END -->
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./api/logout.php">Logout </a>
+                            <a class="nav-link active" aria-current="page" href="<?php echo home_base_url()?>api/logout.php" >Logout </a>
                         </li>
                         <?php
                         }
